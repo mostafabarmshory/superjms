@@ -3,5 +3,15 @@
 	"version": "0.1.0",
 	"title": "Super Job Management System",
 	"model": [],
-	"permisson": []
+	"permisson": [],
+	"Monitor_Metric": [
+		{
+			"name": "superjms.pipeline.count",
+			"title": "Number of pipelines",
+			"description": "Defines number of pipelines created on the server.",
+			"function": "Pluf\\SuperJms\\Monitor::pipelineCount",
+			"cacheable": true,
+			"interval": 60
+		}
+	]
 }

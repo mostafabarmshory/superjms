@@ -21,18 +21,13 @@ namespace Pluf\SuperJms\Tests;
 require_once 'Pluf.php';
 
 use PHPUnit\Framework\TestCase;
-use PHPUnit\Framework\IncompleteTestError;
 use Pluf;
-use Pluf_Tenant;
 use Pluf_Migration;
-use Test_Client;
+use Pluf_Tenant;
 use Test_Assert;
-use User_Role;
 use User_Account;
 use User_Credential;
-use CMS_Content;
-use CMS_Term;
-use CMS_TermTaxonomy;
+use User_Role;
 
 /**
  *
@@ -60,13 +55,13 @@ class MonitorTest extends TestCase
         $tenant->subdomain = 'www';
         $tenant->validate = true;
         if (true !== $tenant->create()) {
-            throw new Pluf_Exception('Faile to create new tenant');
+            throw new \Pluf_Exception('Faile to create new tenant');
         }
 
         $m->init($tenant);
 
         if (! isset($GLOBALS['_PX_request'])) {
-            $GLOBALS['_PX_request'] = new Pluf_HTTP_Request('/');
+            $GLOBALS['_PX_request'] = new \Pluf_HTTP_Request('/');
         }
         $GLOBALS['_PX_request']->tenant = $tenant;
 
@@ -75,7 +70,7 @@ class MonitorTest extends TestCase
         $user->login = 'test';
         $user->is_active = true;
         if (true !== $user->create()) {
-            throw new Exception();
+            throw new \Pluf_Exception();
         }
         // Credential of user
         $credit = new User_Credential();
@@ -84,7 +79,7 @@ class MonitorTest extends TestCase
         ));
         $credit->setPassword('test');
         if (true !== $credit->create()) {
-            throw new Exception();
+            throw new \Pluf_Exception();
         }
 
         $per = User_Role::getFromString('tenant.owner');
@@ -108,6 +103,8 @@ class MonitorTest extends TestCase
     public function gettingSnapshotSchema()
     {
         // TODO: check monitor value
+        $pipelineCount = Pluf\SuperJms\Monitor::pipelineCount();
+        Test_Assert::assertNotNull($pipelineCount);
     }
 
 }

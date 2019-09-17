@@ -19,7 +19,6 @@ if (version_compare('7.2.0', PHP_VERSION, '>')) {
             PHP_BINARY
         )
     );
-
     die(1);
 }
 
