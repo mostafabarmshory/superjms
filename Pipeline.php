@@ -1,7 +1,7 @@
 <?php
 namespace Pluf\SuperJms;
 
-class Pipeline extends Pluf\Jms\Pipeline
+class Pipeline extends \Pluf\Jms\Pipeline
 {
 
     /**
