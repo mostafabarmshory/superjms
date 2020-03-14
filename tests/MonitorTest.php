@@ -20,11 +20,10 @@ namespace Pluf\SuperJms\Tests;
 
 require_once 'Pluf.php';
 
-use PHPUnit\Framework\TestCase;
+use Pluf\Test\TestCase;
 use Pluf;
 use Pluf_Migration;
 use Pluf_Tenant;
-use Test_Assert;
 use User_Account;
 use User_Credential;
 use User_Role;
@@ -104,7 +103,7 @@ class MonitorTest extends TestCase
     {
         // TODO: check monitor value
         $pipelineCount = Pluf\SuperJms\Monitor::pipelineCount();
-        Test_Assert::assertNotNull($pipelineCount);
+        $this->assertNotNull($pipelineCount);
     }
 
 }

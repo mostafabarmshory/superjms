@@ -13,10 +13,11 @@ $cfg['debug'] = true;
 $cfg['installed_apps'] = array(
     'Pluf',
     'User',
-    'Role',
-    'Group',
     'Monitor',
+    'Tenant',
+    'SuperTenant',
     'Jms',
+    'SuperJms',
 );
 
 $cfg['multitenant'] = true;
