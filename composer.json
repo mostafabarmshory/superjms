@@ -17,22 +17,11 @@
 	],
 	"minimum-stability" : "stable",
 	"require" : {
-		"pluf/jms" : "5.13.x"
+		"pluf/jms" : "6.x",
+		"pluf/supertenant" : "6.x"
 	},
 	"require-dev" : {
-		"pluf/test" : "5.13.x",
-		"pluf/cms" : "5.13.x",
-		"pluf/tenant" : "5.13.x",
-		"pluf/user" : "5.13.x"
-	},
-	"autoload" : {
-		"psr-4" : {
-			"Pluf\\SuperJms\\" : ""
-		},
-		"exclude-from-classmap" : [
-			"/Tests/",
-			"/vendor/"
-		]
+		"pluf/test" : "6.x"
 	},
 	"homepage" : "https://github.com/pluf/cache",
 	"support" : {
@@ -47,5 +36,101 @@
 		"php",
 		"pluf-module",
 		"job"
+	],
+	"autoload" : {
+		"psr-4" : {
+			"Pluf\\SuperJms\\" : "src"
+		}
+	},
+	"autoload-dev" : {
+		"psr-4" : {
+			"Pluf\\SuperJms\\Tests\\" : "tests"
+		}
+	},
+	"repositories" : [{
+			"type" : "path",
+			"url" : "../core",
+			"name" : "pluf/core",
+			"options" : {
+				"symlink" : true
+			}
+		}, {
+			"type" : "path",
+			"url" : "../test",
+			"name" : "pluf/test",
+			"options" : {
+				"symlink" : true
+			}
+		}, {
+			"type" : "path",
+			"url" : "../http2",
+			"name" : "pluf/http2",
+			"options" : {
+				"symlink" : true
+			}
+		}, {
+			"type" : "path",
+			"url" : "../cms",
+			"name" : "pluf/cms",
+			"options" : {
+				"symlink" : true
+			}
+		}, {
+			"type" : "path",
+			"url" : "../monitor",
+			"name" : "pluf/monitor",
+			"options" : {
+				"symlink" : true
+			}
+		}, {
+			"type" : "path",
+			"url" : "../user",
+			"name" : "pluf/user",
+			"options" : {
+				"symlink" : true
+			}
+		}, {
+			"type" : "path",
+			"url" : "../jms",
+			"name" : "pluf/jms",
+			"options" : {
+				"symlink" : true
+			}
+		}, {
+			"type" : "path",
+			"url" : "../tenant",
+			"name" : "pluf/tenant",
+			"options" : {
+				"symlink" : true
+			}
+		}, {
+			"type" : "path",
+			"url" : "../supertenant",
+			"name" : "pluf/supertenant",
+			"options" : {
+				"symlink" : true
+			}
+		}, {
+			"type" : "path",
+			"url" : "../workflow",
+			"name" : "pluf/workflow",
+			"options" : {
+				"symlink" : true
+			}
+		}, {
+			"type" : "path",
+			"url" : "../discount",
+			"name" : "pluf/discount",
+			"options" : {
+				"symlink" : true
+			}
+		}, {
+			"type" : "path",
+			"url" : "../bank",
+			"name" : "pluf/bank",
+			"options" : {
+				"symlink" : true
+			}
+		}
 	]
 }
