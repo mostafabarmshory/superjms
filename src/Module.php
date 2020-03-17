@@ -18,7 +18,9 @@
  */
 namespace Pluf\SuperJms;
 
-class Module
+use Pluf;
+
+class Module extends \Pluf\Module
 {
 
     const moduleJsonPath = __DIR__ . '/module.json';
@@ -29,4 +31,7 @@ class Module
     const relations = array();
 
     const urlsPath = __DIR__ . '/urls.php';
+    
+    public function init(Pluf $bootstrap): void
+    {}
 }
